@@ -70,6 +70,29 @@ public class Map {
   public JComponent eatCookie(String name) {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
-    return null;
+	
+	//If this method was called from pacman-consume(), that means
+	//we can assume pac-man is sharing a location with a cookie.
+	//name holds the name of the cookie which I'll use to gather
+	//other info like location and the JComponent for the cookie.
+	Location loc;
+	JComponent cookie;
+    try {
+    	loc = locations.get(name); //loc holds the pac-man/cookie location
+        cookie = components.get(name); //cookie holds the cookie
+    }
+    catch (Exception e) {
+    	//If something goes wrong with finding the cookie at the given location
+    	return null;
+    }
+    
+    //update variables
+    locations.remove(name);
+    components.remove(name);
+    field.get(loc).remove(Type.COOKIE);
+    cookies -= 1;
+    
+    //return cookie
+    return cookie;
   }
 }
