@@ -16,8 +16,9 @@ public class Ghost {
   }
 
   public boolean move() {
-    if (get_valid_moves().size() > 0) {
-        myLoc = get_valid_moves().get(0);
+    if (this.get_valid_moves().size() > 0) {
+        myMap.move(myName, this.get_valid_moves().get(0), Map.Type.GHOST);
+        myLoc = this.get_valid_moves().get(0);
         return true;
     } else {
       return false;
