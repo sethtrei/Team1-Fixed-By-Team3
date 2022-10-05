@@ -69,6 +69,9 @@ public class Map {
 	  which will remove pacman from locations and field when a ghost is on top of pacman.
 	  This means I will only have to check if pacman is contained in locations
 	*/
+	if (!locations.containsKey(Name)) {
+		return false;
+	}
 	if (!locations.containsKey("pacman")) {
 		gameOver = true;
 	}
