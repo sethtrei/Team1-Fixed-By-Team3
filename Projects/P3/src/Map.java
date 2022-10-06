@@ -54,7 +54,38 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-    return false;
+    HashSet<Type> s = new HashSet<Type>();
+    s.add(type);
+
+    switch(type){
+      case EMPTY:
+      this.components.get(name).setLocation(loc.x, loc.y);
+      this.locations.put(name, loc);
+      this.field.put(loc, s);
+      return true;
+      case PACMAN:
+      PacMan pm = new PacMan(name, loc, this);
+      if(pm.get_valid_moves().contains(loc)){
+        this.components.get(name).setLocation(loc.x, loc.y);
+        this.locations.put(name, loc);
+        this.field.put(loc, s);
+      }else{
+        return false;
+      }
+      return true;
+      case GHOST:
+      Ghost g = new Ghost(name, loc, this);
+      if(g.get_valid_moves().contains(loc)){
+        this.components.get(name).setLocation(loc.x, loc.y);
+        this.locations.put(name, loc);
+        this.field.put(loc, s);
+      }else{
+        return false;
+      }
+      return true;
+      default:
+      return false;
+    }
   }
 
   public HashSet<Type> getLoc(Location loc) {
