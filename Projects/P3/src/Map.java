@@ -2,8 +2,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
 
-import com.sun.jdi.Location;
-
 public class Map {
 
   public enum Type {
