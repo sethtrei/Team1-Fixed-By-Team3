@@ -1,5 +1,5 @@
 # PacMan Game (Team1)
-
+Group members: Brandon Gormley, Brian Hopkins, Matthew Day, Maxwell Myers
 ## Pacman Class
 
 ### consume()
