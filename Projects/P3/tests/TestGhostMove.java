@@ -7,6 +7,6 @@ public class TestGhostMove extends TestCase {
     NoFrame frame = new NoFrame();
     Ghost = frame.addGhost(new Location(1, 1));
     ghost.move();
-    assertFalse(frame.getMap().getloc((new Location(1, 1)) == Map.Type.GHOST);
+    assertFalse(frame.getMap().getloc(new Location(1, 1)) == Map.Type.GHOST);
   }
 }
