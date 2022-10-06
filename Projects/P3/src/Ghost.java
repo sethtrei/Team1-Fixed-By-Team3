@@ -12,11 +12,7 @@ public class Ghost {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    ArrayList<Location> lst = new ArrayList<Location>();
-    lst.add(new Location(myLoc.x+1, myLoc.y));
-    lst.add(new Location(myLoc.x+1, myLoc.y+1));
-    lst.add(new Location(myLoc.x, myLoc.y+1));
-    return lst;
+    return null;
   }
 
   public boolean move() {
