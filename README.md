@@ -10,8 +10,16 @@ consume() is tested by instantiating a Pacman object and asserting that consume(
 by default there should be a cookie at the same location as Pacman, and consume() only returns a non-null value when there
 is a cookie on the same location as Pacman.
 
+### move()
+move() attempts to move Pacman to the first valid move if there are any valid moves. It is tested by creating an instance of Pacman, then using move(), and then checking to see if it moved with getLoc().
+
 ## Ghost Class
 
+### move()
+move() attempts to move the ghost to the first valid move if there are any valid moves. It is tested by creating an instance of a ghost, then using move(), and then checking to see if it moved with getLoc().
+## Map Class
 
 ## Map Class
 
+### getLoc()
+getLoc() gets the type of what is at the location by using getting what is at loc in the field HashMap.
