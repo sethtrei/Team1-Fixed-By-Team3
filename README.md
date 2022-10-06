@@ -19,6 +19,9 @@ move() attempts to move Pacman to the first valid move if there are any valid mo
 ### is_ghost_in_range()
 This function simply checks every space adjacent to (not including diagonals), to see if any of those spaces contain a ghost. If they do, the function returns true, otherwise it returns false.
 
+### get_valid_moves()
+get_valid_moves() is responsible for returning an arraylist of coordinates which show you which direction PacMan can move in. This function takes into account the ghosts on the map as well as the walls/borders.
+
 ## Ghost Class
 
 ### move()
@@ -29,10 +32,16 @@ ghost.attack() tests to ensure that a ghost is within 1 tile of Pacman. If this 
 
 ghost.attack() is tested by creating a Pacman and Ghost object next to eachother, and then ensuring that ghost.attack() returns True. This works because the function should return True when a ghost successfully attacked Pacman.
 
+### get_valid_moves()
+get_valid_moves() for ghosts is responsible for making sure that the ghosts do not run into the borders or walls of the map. It returns an arraylist of locations next to the ghost that are not currently blocked by a wall.
+
 ### is_pacman_in_range()
 This functions works almost the same as PacMan,is_ghost_in_range(). It checks every space adjacent to the ghost (not including diagonals), to see if any of those contains pacman. If they do, the function returns true, otherwise it returns false.
 
 ## Map Class
+
+### move()
+move() is responsible for actually changing where pacman and the ghosts on the map are located.
 
 ### getLoc()
 getLoc() gets the type of what is at the location by using getting what is at loc in the field HashMap.
