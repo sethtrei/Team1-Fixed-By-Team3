@@ -17,7 +17,6 @@ move() attempts to move Pacman to the first valid move if there are any valid mo
 
 ### move()
 move() attempts to move the ghost to the first valid move if there are any valid moves. It is tested by creating an instance of a ghost, then using move(), and then checking to see if it moved with getLoc().
-## Map Class
 
 ## Map Class
 
