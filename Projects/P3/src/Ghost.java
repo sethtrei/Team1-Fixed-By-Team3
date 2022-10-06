@@ -40,7 +40,8 @@ public class Ghost {
         	//If there was a problem, and pac-man cannot be found in the ghost's range.
         	return false;
         }
-    	return myMap.move(myName, pacman_loc, Map.Type.GHOST);
+    	myMap.move(myName, pacman_loc, Map.Type.GHOST);
+    	return myMap.attack(myName);
     }
     else {
     	return false;
