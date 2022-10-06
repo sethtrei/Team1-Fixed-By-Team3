@@ -2,6 +2,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
 
+import com.sun.jdi.Location;
+
 public class Map {
 
   public enum Type {
@@ -76,6 +78,10 @@ public class Map {
       case GHOST:
       Ghost g = new Ghost(name, loc, this);
       if(g.get_valid_moves().contains(loc)){
+        if(field.get(loc).contains(Map.Type.PACMAN)){
+          this.field.remove(Map.Type.PACMAN);
+          this.locations.remove("pacman");
+        }
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.put(loc, s);
