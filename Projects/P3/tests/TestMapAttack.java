@@ -20,7 +20,7 @@ public class TestMapAttack extends TestCase {
 	  //if this worked (which it shouldn't) it would automatically call Map.attack("Blinky")
 	  assertFalse(frame.getMap().isGameOver());
 	  
-	  Ghost ghost2 = frame.addGhost(new Location(1,3), "Clyde", Color.orange);
+	  Ghost ghost2 = frame.addGhost(new Location(3,3), "Clyde", Color.orange);
 	  ghost2.attack();
 	  //this should work, so it will automatically call Map.attack("Clyde")
 	  assertTrue(frame.getMap().isGameOver());
