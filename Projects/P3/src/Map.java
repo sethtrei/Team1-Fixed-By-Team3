@@ -64,7 +64,18 @@ public class Map {
 
   public boolean attack(String Name) {
     // update gameOver
-    return false;
+    /*this relies on how the ghost attack function was implemented.
+	  I will assume that the ghost attack function calls the Map.move function,
+	  which will remove pacman from locations and field when a ghost is on top of pacman.
+	  This means I will only have to check if pacman is contained in locations
+	*/
+	if (!locations.containsKey(Name)) {
+		return false;
+	}
+	if (!locations.containsKey("pacman")) {
+		gameOver = true;
+	}
+	return gameOver;
   }
 
   public JComponent eatCookie(String name) {
