@@ -10,6 +10,9 @@ consume() is tested by instantiating a Pacman object and asserting that consume(
 ### move()
 move() attempts to move Pacman to the first valid move if there are any valid moves. It is tested by creating an instance of Pacman, then using move(), and then checking to see if it moved with getLoc().
 
+### is_ghost_in_range()
+This function simply checks every space adjacent to (not including diagonals), to see if any of those spaces contain a ghost. If they do, the function returns true, otherwise it returns false.
+
 ## Ghost Class
 
 ### move()
@@ -20,6 +23,9 @@ ghost.attack() tests to ensure that a ghost is within 1 tile of Pacman. If this 
 
 ghost.attack() is tested by creating a Pacman and Ghost object next to eachother, and then ensuring that ghost.attack() returns True. This works because the function should return True when a ghost successfully attacked Pacman.
 
+### is_pacman_in_range()
+This functions works almost the same as PacMan,is_ghost_in_range(). It checks every space adjacent to the ghost (not including diagonals), to see if any of those contains pacman. If they do, the function returns true, otherwise it returns false.
+
 ## Map Class
 
 ### getLoc()
@@ -29,3 +35,6 @@ getLoc() gets the type of what is at the location by using getting what is at lo
 map.eatCookie() is only called when Pacman is above a cookie, from the Pacman.consume() function. eatCookie() removes the cookie token from various instance variables of the Map. It takes as a parameter the string ID of the pacman object, and returns the cookie component if Pacman successfully ate the cookie (null otherwise).
 
 map.eatCookie() is tested by creating a new Pacman object sharing a tile with a cookie token. Since the function should return the cookie component, a not-null assertion is used on the value of the function.
+
+### attack()
+This functions relies on the way that Ghost.attack() is implemented. Map.attack() will only be called by Ghost.attack(), and only after calling Map.move(). So all it does is first do a quick check to see if the input name provided is an existing name, otherwise it returns false. Then it checks to see if pacman still exists in the locations data structure. If pacman does exist, then the attack was not successfull, but if pacman does not exist, then the attack must have been successfull to gameOver is updated to be true, and the fucntion returns true.
