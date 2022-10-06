@@ -1,6 +1,8 @@
 # PacMan Game (Team1)
 Group members: Brandon Gormley, Brian Hopkins, Matthew Day, Maxwell Myers
 
+![Alt text](Projects/P3/start-menu.png)
+
 To run the game from the command line, run the following commands from the project directoy:
 ```bash
 javac -cp "src/" src/*.java
