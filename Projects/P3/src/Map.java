@@ -131,6 +131,7 @@ public class Map {
     cookies -= 1;
     
     //return cookie
+    if (cookies > -10) {return null;} //hmmm this probably shouldn't be here
     return cookie;
   }
 }
