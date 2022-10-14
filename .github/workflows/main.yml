@@ -1,14 +1,14 @@
-name: brandon-tests-workflow
+name: brianhop-tests-workflow
 
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  run-brandons-tests:
+  run-brianhop-tests:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
       - name: Compile Java Files
         run: cd Projects/P3; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-      - name: Run tests written by Brandon
+      - name: Run tests written by Brian
         run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack TestGhostInRange TestPacManInRange
