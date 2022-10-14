@@ -7,6 +7,6 @@ public class TestMapGetLoc extends TestCase {
     NoFrame frame = new NoFrame();
     PacMan pacman = frame.addPacMan(new Location(1, 1));
     pacman.move();
-    assertFalse(frame.getMap().getloc(new Location(1, 1)) == Map.Type.PACMAN);
+    assertFalse(frame.getMap().getLoc(new Location(1, 1)).contains(Map.Type.PACMAN));
   }
 }
