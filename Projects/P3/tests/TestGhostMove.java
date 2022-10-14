@@ -8,6 +8,6 @@ public class TestGhostMove extends TestCase {
     NoFrame frame = new NoFrame();
     Ghost ghost = frame.addGhost(new Location(1, 1), "Blinky", Color.red);
     ghost.move();
-    assertFalse(frame.getMap().getloc(new Location(1, 1)).contains(Map.Type.GHOST));
+    assertFalse(frame.getMap().getLoc(new Location(1, 1)).contains(Map.Type.GHOST));
   }
 }
