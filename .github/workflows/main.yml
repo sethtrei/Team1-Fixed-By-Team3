@@ -9,7 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Compile P3
-        run: |
-          javac -cp "src/" Projects/P3/src/*.java
-          javac -cp "tests/" Projects/P3/tests/*.java
-          javac -cp "junit-4.10.jar:." Projects/P3/tests/*.java
+        run: cd Projects/P3; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
