@@ -59,23 +59,18 @@ public class Map {
 
     switch(type){
       case EMPTY:
-      this.components.get(name).setLocation(loc.x, loc.y);
-      this.locations.put(name, loc);
-      this.field.put(loc, s);
-      return true;
-      case PACMAN:
-      PacMan pm = new PacMan(name, loc, this);
-      if(pm.get_valid_moves().contains(loc)){
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.put(loc, s);
-      }else{
-        return false;
-      }
-      return true;
+        return true;
+      case PACMAN:
+        PacMan pm = new PacMan(name, loc, this);
+        this.components.get(name).setLocation(loc.x, loc.y);
+        this.locations.put(name, loc);
+        this.field.put(loc, s);
+        return true;
       case GHOST:
-      Ghost g = new Ghost(name, loc, this);
-      if(g.get_valid_moves().contains(loc)){
+        Ghost g = new Ghost(name, loc, this);
         if(field.get(loc).contains(Map.Type.PACMAN)){
           this.field.remove(Map.Type.PACMAN);
           this.locations.remove("pacman");
@@ -83,12 +78,9 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.put(loc, s);
-      }else{
-        return false;
-      }
-      return true;
+        return true;
       default:
-      return false;
+        return false;
     }
   }
 

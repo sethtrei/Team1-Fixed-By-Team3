@@ -15,64 +15,23 @@ public class PacMan {
 
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> lst = new ArrayList<Location>();
-    if(myMap.getLoc(new Location(myLoc.x, myLoc.y+1)).contains(Map.Type.WALL)){//down
-      lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-
-      lst.add(new Location(myLoc.x-1, myLoc.y)); // left
-
-      lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-      return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x, myLoc.y-1)).contains(Map.Type.WALL)){//up
-      lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-      lst.add(new Location(myLoc.x, myLoc.y+1)); // down
-      lst.add(new Location(myLoc.x-1, myLoc.y)); // left
-      return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y)).contains(Map.Type.WALL)){//right
-      lst.add(new Location(myLoc.x-1, myLoc.y)); // left
-
-      lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-
-      lst.add(new Location(myLoc.x, myLoc.y+1)); // down
-      return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.WALL)){//left
-      lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-      lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-      lst.add(new Location(myLoc.x, myLoc.y+1)); // down
-      return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x, myLoc.y+1)).contains(Map.Type.GHOST)){//down
-        lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-
-        lst.add(new Location(myLoc.x-1, myLoc.y)); // left
+    Location left = new Location(myLoc.x-1, myLoc.y);
+    Location right = new Location(myLoc.x+1, myLoc.y);
+    Location up = new Location(myLoc.x, myLoc.y+1);
+    Location down = new Location(myLoc.x, myLoc.y-1);
     
-        lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-        return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x, myLoc.y-1)).contains(Map.Type.GHOST)){//up
-        lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-        lst.add(new Location(myLoc.x, myLoc.y+1)); // down
-        lst.add(new Location(myLoc.x-1, myLoc.y)); // left
-        return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x+1, myLoc.y)).contains(Map.Type.GHOST)){//right
-        lst.add(new Location(myLoc.x-1, myLoc.y)); // left
-
-        lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-    
-        lst.add(new Location(myLoc.x, myLoc.y+1)); // down
-        return lst;
-    }else if(myMap.getLoc(new Location(myLoc.x-1, myLoc.y)).contains(Map.Type.GHOST)){//left
-        lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-        lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-        lst.add(new Location(myLoc.x, myLoc.y+1)); // down
-        return lst;
-      }
-
-
-    lst.add(new Location(myLoc.x+1, myLoc.y)); // right
-
-    lst.add(new Location(myLoc.x-1, myLoc.y)); // left
-
-    lst.add(new Location(myLoc.x, myLoc.y-1)); // up
-
-    lst.add(new Location(myLoc.x, myLoc.y+1)); // down
+    if (!(myMap.getLoc(left).contains(Map.Type.WALL) || myMap.getLoc(left).contains(Map.Type.GHOST))) {
+    	lst.add(left);
+    }
+    if (!(myMap.getLoc(right).contains(Map.Type.WALL) || myMap.getLoc(right).contains(Map.Type.GHOST))) {
+    	lst.add(right);
+    }
+    if (!(myMap.getLoc(up).contains(Map.Type.WALL) || myMap.getLoc(up).contains(Map.Type.GHOST))) {
+    	lst.add(up);
+    }
+    if (!(myMap.getLoc(down).contains(Map.Type.WALL) || myMap.getLoc(down).contains(Map.Type.GHOST))) {
+    	lst.add(down);
+    }
     return lst;
   }
 
