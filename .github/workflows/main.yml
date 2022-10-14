@@ -1,0 +1,11 @@
+jobs:
+  compile:
+  runs-on: ubuntu-latest
+  container: openjdk
+  steps:
+    - uses: actions/checkout@v2
+    - name: Compile P3
+      run: |
+        javac -cp "src/" src/*.java
+        javac -cp "tests/" tests/*.java
+        javac -cp "junit-4.10.jar:." *.java
