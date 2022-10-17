@@ -62,13 +62,13 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.put(loc, s);
-        return true;
+        return false;
       case PACMAN:
         PacMan pm = new PacMan(name, loc, this);
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.put(loc, s);
-        return true;
+        return false;
       case GHOST:
         Ghost g = new Ghost(name, loc, this);
         if(field.get(loc).contains(Map.Type.PACMAN)){
@@ -78,7 +78,7 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.put(loc, s);
-        return true;
+        return false;
       default:
         return false;
     }
