@@ -18,16 +18,16 @@ public class Ghost {
     Location up = new Location(myLoc.x, myLoc.y+1);
     Location down = new Location(myLoc.x, myLoc.y-1);
     
-    if ((myMap.getLoc(left).contains(Map.Type.WALL))) {
+    if (!(myMap.getLoc(left).contains(Map.Type.WALL))) {
     	lst.add(left);
     }
-    if ((myMap.getLoc(right).contains(Map.Type.WALL))) {
+    if (!(myMap.getLoc(right).contains(Map.Type.WALL))) {
     	lst.add(right);
     }
-    if ((myMap.getLoc(up).contains(Map.Type.WALL))){
+    if (!(myMap.getLoc(up).contains(Map.Type.WALL))){
     	lst.add(up);
     }
-    if ((myMap.getLoc(down).contains(Map.Type.WALL))){
+    if (!(myMap.getLoc(down).contains(Map.Type.WALL))){
     	lst.add(down);
     }
     return lst;
