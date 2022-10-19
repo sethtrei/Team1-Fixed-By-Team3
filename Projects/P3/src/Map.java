@@ -63,7 +63,7 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.get(loc).add(Map.Type.PACMAN);
-        return true;
+        return false;
       case GHOST:
         Location ghostOldLoc = this.locations.get(name);
         this.field.get(ghostOldLoc).remove(Map.Type.GHOST);
@@ -74,7 +74,7 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.get(loc).add(Map.Type.GHOST);
-        return true;
+        return false;
       default:
         return false;
     }
