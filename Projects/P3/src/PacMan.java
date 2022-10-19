@@ -20,16 +20,16 @@ public class PacMan {
     Location up = new Location(myLoc.x, myLoc.y+1);
     Location down = new Location(myLoc.x, myLoc.y-1);
     
-    if (!(myMap.getLoc(left).contains(Map.Type.WALL) || myMap.getLoc(left).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(left).contains(Map.Type.WALL) || myMap.getLoc(left).contains(Map.Type.GHOST))) {
     	lst.add(left);
     }
-    if (!(myMap.getLoc(right).contains(Map.Type.WALL) || myMap.getLoc(right).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(right).contains(Map.Type.WALL) || myMap.getLoc(right).contains(Map.Type.GHOST))) {
     	lst.add(right);
     }
-    if (!(myMap.getLoc(up).contains(Map.Type.WALL) || myMap.getLoc(up).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(up).contains(Map.Type.WALL) || myMap.getLoc(up).contains(Map.Type.GHOST))) {
     	lst.add(up);
     }
-    if (!(myMap.getLoc(down).contains(Map.Type.WALL) || myMap.getLoc(down).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(down).contains(Map.Type.WALL) || myMap.getLoc(down).contains(Map.Type.GHOST))) {
     	lst.add(down);
     }
     return lst;
