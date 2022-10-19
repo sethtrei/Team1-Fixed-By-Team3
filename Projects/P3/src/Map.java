@@ -66,7 +66,7 @@ public class Map {
         return true;
       case GHOST:
         Location ghostOldLoc = this.locations.get(name);
-        this.field.get(oldLoc).remove(Map.Type.GHOST);
+        this.field.get(ghostOldLoc).remove(Map.Type.GHOST);
         if(field.get(loc).contains(Map.Type.PACMAN)){
           this.field.get(loc).remove(Map.Type.PACMAN);
           this.locations.remove("pacman");
