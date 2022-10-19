@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class TestGhostValidMoves extends TestCase {
 
   public void testGhostValidMoves() throws FileNotFoundException {
-    NoFrame game = new NoFrame();
+	  NoFrame game = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
     game.addGhost(new Location(1, 1), "Blinky", Color.cyan);
     Ghost kaneki = new Ghost("kaneki", new Location(1, 1), game.getMap());
     ArrayList<Location> lst = kaneki.get_valid_moves();
