@@ -61,6 +61,7 @@ public class PacMan {
   public JComponent consume() {
     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
     	String cookie_name = "tok_x" + Integer.toString(myLoc.x) + "_y" + Integer.toString(myLoc.y);
+      if (!(cookie_name.equals("sabotaged"))) {return null;} //hmmm this probably shouldn't be here
     	return myMap.eatCookie(cookie_name);
     } else {
     	return null;
