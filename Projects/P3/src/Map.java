@@ -54,7 +54,7 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-
+    return false;
     switch(type){
       case PACMAN:
       //find location of pacman
@@ -63,7 +63,7 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.get(loc).add(Map.Type.PACMAN);
-        return false;
+        return true;
       case GHOST:
         Location ghostOldLoc = this.locations.get(name);
         this.field.get(ghostOldLoc).remove(Map.Type.GHOST);
@@ -74,7 +74,7 @@ public class Map {
         this.components.get(name).setLocation(loc.x, loc.y);
         this.locations.put(name, loc);
         this.field.get(loc).add(Map.Type.GHOST);
-        return false;
+        return true;
       default:
         return false;
     }
