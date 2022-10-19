@@ -54,6 +54,7 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
+
     switch(type){
       case PACMAN:
       //find location of pacman
@@ -82,7 +83,7 @@ public class Map {
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
-    return field.get(0);
+    return field.get(loc);
   }
 
   public boolean attack(String Name) {
@@ -96,7 +97,7 @@ public class Map {
 		return false;
 	}
 	if (!locations.containsKey("pacman")) {
-		gameOver = false; // <~~~~~~~~~~~~~~~~~~~~~ ¯\_(ツ)_/¯
+		gameOver = true;
 	}
 	return gameOver;
   }
