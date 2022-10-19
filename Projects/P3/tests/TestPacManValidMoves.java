@@ -6,7 +6,7 @@ import junit.framework.*;
 public class TestPacManValidMoves extends TestCase {
 
   public void testPacManValidMoves() throws FileNotFoundException {
-    MainFrame game = new MainFrame();
+    NoFrame game = new NoFrame();
     game.addPacMan(new Location(1, 1));
     PacMan kaneki = new PacMan("kaneki", new Location(1,1), game.getMap());
     ArrayList<Location> lst = kaneki.get_valid_moves();

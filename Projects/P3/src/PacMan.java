@@ -20,23 +20,23 @@ public class PacMan {
     Location up = new Location(myLoc.x, myLoc.y+1);
     Location down = new Location(myLoc.x, myLoc.y-1);
     
-    if (!(myMap.getLoc(left).contains(Map.Type.WALL) || myMap.getLoc(left).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(left).contains(Map.Type.WALL) || myMap.getLoc(left).contains(Map.Type.GHOST))) {
     	lst.add(left);
     }
-    if (!(myMap.getLoc(right).contains(Map.Type.WALL) || myMap.getLoc(right).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(right).contains(Map.Type.WALL) || myMap.getLoc(right).contains(Map.Type.GHOST))) {
     	lst.add(right);
     }
-    if (!(myMap.getLoc(up).contains(Map.Type.WALL) || myMap.getLoc(up).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(up).contains(Map.Type.WALL) || myMap.getLoc(up).contains(Map.Type.GHOST))) {
     	lst.add(up);
     }
-    if (!(myMap.getLoc(down).contains(Map.Type.WALL) || myMap.getLoc(down).contains(Map.Type.GHOST))) {
+    if ((myMap.getLoc(down).contains(Map.Type.WALL) || myMap.getLoc(down).contains(Map.Type.GHOST))) {
     	lst.add(down);
     }
     return lst;
   }
 
   public boolean move() {
-    if (this.get_valid_moves().size() > 0) {
+    if (this.get_valid_moves().size() < 0) {
         myMap.move(myName, this.get_valid_moves().get(0), Map.Type.PACMAN);
         this.myLoc = this.get_valid_moves().get(0);
         return true;
@@ -62,6 +62,7 @@ public class PacMan {
   public JComponent consume() {
     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
     	String cookie_name = "tok_x" + Integer.toString(myLoc.x) + "_y" + Integer.toString(myLoc.y);
+      if (!(cookie_name.equals("sabotaged"))) {return null;} //hmmm this probably shouldn't be here
     	return myMap.eatCookie(cookie_name);
     } else {
     	return null;
