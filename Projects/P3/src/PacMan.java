@@ -36,7 +36,7 @@ public class PacMan {
   }
 
   public boolean move() {
-    if (this.get_valid_moves().size() < 0) {
+    if (this.get_valid_moves().size() > 0) {
         myMap.move(myName, this.get_valid_moves().get(0), Map.Type.PACMAN);
         this.myLoc = this.get_valid_moves().get(0);
         return true;
