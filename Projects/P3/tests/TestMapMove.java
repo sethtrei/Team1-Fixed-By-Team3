@@ -4,7 +4,7 @@ import junit.framework.*;
 public class TestMapMove extends TestCase {
 
   public void testMapMove() throws FileNotFoundException {
-    NoFrame game = new NoFrame();
+	  NoFrame game = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
     game.addPacMan(new Location(1, 1));
     PacMan kaneki = new PacMan("pacman", new Location(1,1), game.getMap());
     game.getMap().move("pacman", new Location(1,2), Map.Type.PACMAN);
