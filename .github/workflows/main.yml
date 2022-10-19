@@ -18,3 +18,4 @@ jobs:
         run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves TestPacManValidMoves TestMapMove
       - name: Run tests written by Matthew
         run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove TestGhostMove TestMapGetLoc
+        
