@@ -126,7 +126,6 @@ public class Map {
     field.get(loc).remove(Type.COOKIE);
     cookies -= 1;
     
-    return null; //hmmm this probably shouldn't be here, and the line below should be uncommented.
-    //return cookie;
+    return cookie;
   }
 }
