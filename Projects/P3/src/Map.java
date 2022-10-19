@@ -54,25 +54,26 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
+
     switch(type){
       case PACMAN:
       //find location of pacman
-        // Location oldLoc = this.locations.get(name);
-        // this.field.get(oldLoc).remove(Map.Type.PACMAN);
-        // this.components.get(name).setLocation(loc.x, loc.y);
-        // this.locations.put(name, loc);
-        // this.field.get(loc).add(Map.Type.PACMAN);
+        Location oldLoc = this.locations.get(name);
+        this.field.get(oldLoc).remove(Map.Type.PACMAN);
+        this.components.get(name).setLocation(loc.x, loc.y);
+        this.locations.put(name, loc);
+        this.field.get(loc).add(Map.Type.PACMAN);
         return true;
       case GHOST:
-        // Location ghostOldLoc = this.locations.get(name);
-        // this.field.get(ghostOldLoc).remove(Map.Type.GHOST);
-        // if(field.get(loc).contains(Map.Type.PACMAN)){
-        //   this.field.get(loc).remove(Map.Type.PACMAN);
-        //   this.locations.remove("pacman");
-        // }
-        // this.components.get(name).setLocation(loc.x, loc.y);
-        // this.locations.put(name, loc);
-        // this.field.get(loc).add(Map.Type.GHOST);
+        Location ghostOldLoc = this.locations.get(name);
+        this.field.get(ghostOldLoc).remove(Map.Type.GHOST);
+        if(field.get(loc).contains(Map.Type.PACMAN)){
+          this.field.get(loc).remove(Map.Type.PACMAN);
+          this.locations.remove("pacman");
+        }
+        this.components.get(name).setLocation(loc.x, loc.y);
+        this.locations.put(name, loc);
+        this.field.get(loc).add(Map.Type.GHOST);
         return true;
       default:
         return false;
@@ -82,7 +83,7 @@ public class Map {
 
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
-    return field.get(0);
+    return field.get(loc);
   }
 
   public boolean attack(String Name) {
@@ -96,7 +97,7 @@ public class Map {
 		return false;
 	}
 	if (!locations.containsKey("pacman")) {
-		gameOver = true; 
+		gameOver = true;
 	}
 	return gameOver;
   }
