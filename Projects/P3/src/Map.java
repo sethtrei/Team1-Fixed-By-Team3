@@ -95,7 +95,7 @@ public class Map {
 		return false;
 	}
 	if (!locations.containsKey("pacman")) {
-		gameOver = true;
+		gameOver = false; // <~~~~~~~~~~~~~~~~~~~~~ ¯\_(ツ)_/¯
 	}
 	return gameOver;
   }
