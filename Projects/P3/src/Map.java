@@ -56,11 +56,6 @@ public class Map {
     // use the setLocation method for the component to move it to the new location
 
     switch(type){
-      case EMPTY:
-        this.components.get(name).setLocation(loc.x, loc.y);
-        this.locations.put(name, loc);
-        this.field.put(loc, s);
-        return true;
       case PACMAN:
       //find location of pacman
         Location oldLoc = this.locations.get(name);
