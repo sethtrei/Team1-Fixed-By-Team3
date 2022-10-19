@@ -12,3 +12,9 @@ jobs:
         run: cd Projects/P3; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
       - name: Run tests written by Brandon
         run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack TestMapEatCookie TestConsume
+      - name: Run tests written by Brian
+        run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack TestGhostInRange TestPacManInRange
+      - name: Run tests written by Maxwell
+        run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves TestPacManValidMoves TestMapMove
+      - name: Run tests written by Matthew
+        run: cd Projects/P3; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove TestGhostMove TestMapGetLoc
